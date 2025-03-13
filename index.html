@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circular Progress Bar Demo</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header"><h1 class="header__title">Progress</h1></header>
+      <main class="main">
+        <section class="progress-bar">
+          <div class="progress-bar__container" id="progressBar"></div>
+        </section>
+        
+        <section class="toolbar">
+          <label class="value-input" for="progressValue">
+            <input class="value-input__field" id="progressValue" value="0" />
+            <span class="value-input__label">Value</span>
+          </label>
+
+          <label class="toggle" for="animateToggle">
+            <input
+              class="toggle__checkbox"
+              type="checkbox"
+              id="animateToggle"
+            />
+            <span class="toggle__switch"></span>
+            <span class="toggle__label">Animate</span>
+          </label>
+
+          <label class="toggle" for="hideToggle">
+            <input class="toggle__checkbox" type="checkbox" id="hideToggle" />
+            <span class="toggle__switch"></span>
+            <span class="toggle__label">Hide</span>
+          </label>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

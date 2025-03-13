@@ -1,0 +1,152 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  position: absolute;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  width: 100%;
+
+  margin: auto;
+  padding: 3%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  gap: 20vh;
+
+  @media screen and (orientation: landscape) {
+    flex-direction: row;
+  }
+}
+
+.progress-bar {
+  flex: 1 1 0px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  &__container {
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (orientation: landscape) {
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.toolbar {
+  flex: 1 1 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4vh;
+
+  @media screen and (orientation: landscape) {
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+$width: 25px;
+$gap: 1.75px;
+
+.value-input {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__field {
+    box-sizing: border-box;
+    text-align: center;
+
+    position: relative;
+    display: inline-block;
+    width: $width * 1.8;
+    height: $width + ($gap * 2);
+    margin-right: 6vh;
+    border: 1px solid black;
+    border-radius: $width + ($gap * 2);
+  }
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__checkbox {
+    position: absolute;
+    visibility: hidden;
+
+    &:checked ~ {
+      .toggle__switch {
+        background: #005cff;
+
+        &:before {
+          left: 41%;
+        }
+      }
+    }
+  }
+
+  &__switch {
+    position: relative;
+    display: inline-block;
+    width: $width * 1.8;
+    height: $width + ($gap * 2);
+    margin-right: 6vh;
+    border-radius: $width + ($gap * 2);
+    background: #dae6ec;
+    transition: background 0.25s;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: $gap;
+      left: $gap;
+      width: $width;
+      height: $width;
+      background: #ffffff;
+      border-radius: 50%;
+      transition: left 0.25s;
+    }
+  }
+}
