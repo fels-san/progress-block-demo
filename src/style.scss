@@ -45,10 +45,6 @@ body {
   height: 100%;
   justify-content: center;
   gap: 16%;
-
-  @media screen and (orientation: landscape) {
-    flex-direction: row;
-  }
 }
 
 .progress-bar {
@@ -56,19 +52,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
 
-  &__container {
-    width: 130px;
-    height: 130px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media screen and (orientation: landscape) {
-    justify-content: flex-end;
-    align-items: center;
-  }
+.progress-bar__container {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .toolbar {
@@ -77,81 +68,90 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-  }
-
-  @media screen and (orientation: landscape) {
-    justify-content: center;
-    align-items: flex-start;
-  }
 }
 
-$width: 25px;
-$gap: 1.75px;
+.toolbar__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+// 25px: 25px;
+// 1.75px: 1.75px;
 
 .value-input {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
+}
 
-  &__field {
-    box-sizing: border-box;
-    text-align: center;
+.value-input__field {
+  box-sizing: border-box;
+  text-align: center;
 
-    position: relative;
-    display: inline-block;
-    width: $width * 1.8;
-    height: $width + ($gap * 2);
-    margin-right: 6vh;
-    border: 1px solid black;
-    border-radius: $width + ($gap * 2);
-  }
+  position: relative;
+  display: inline-block;
+  width: 25px * 1.8;
+  height: 25px + (1.75px * 2);
+  margin-right: 6vh;
+  border: 1px solid black;
+  border-radius: 25px + (1.75px * 2);
 }
 
 .toggle {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
+}
 
-  &__checkbox {
-    position: absolute;
-    visibility: hidden;
+.toggle__checkbox {
+  position: absolute;
+  visibility: hidden;
+}
 
-    &:checked ~ {
-      .toggle__switch {
-        background: #005cff;
+.toggle__checkbox:checked ~ .toggle__switch {
+  background: #005cff;
+}
 
-        &:before {
-          left: 41%;
-        }
-      }
-    }
+.toggle__checkbox:checked ~ .toggle__switch:before {
+  left: 41%;
+}
+
+.toggle__switch {
+  position: relative;
+  display: inline-block;
+  width: 25px * 1.8;
+  height: 25px + (1.75px * 2);
+  margin-right: 6vh;
+  border-radius: 25px + (1.75px * 2);
+  background: #dae6ec;
+  transition: background 0.25s;
+}
+
+.toggle__switch:before {
+  content: "";
+  position: absolute;
+  top: 1.75px;
+  left: 1.75px;
+  width: 25px;
+  height: 25px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: left 0.25s;
+}
+
+@media screen and (orientation: landscape) {
+  .main {
+    flex-direction: row;
   }
 
-  &__switch {
-    position: relative;
-    display: inline-block;
-    width: $width * 1.8;
-    height: $width + ($gap * 2);
-    margin-right: 6vh;
-    border-radius: $width + ($gap * 2);
-    background: #dae6ec;
-    transition: background 0.25s;
+  .progress-bar {
+    justify-content: flex-end;
+    align-items: center;
+  }
 
-    &:before {
-      content: "";
-      position: absolute;
-      top: $gap;
-      left: $gap;
-      width: $width;
-      height: $width;
-      background: #ffffff;
-      border-radius: 50%;
-      transition: left 0.25s;
-    }
+  .toolbar {
+    justify-content: center;
+    align-items: flex-start;
   }
 }
