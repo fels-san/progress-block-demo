@@ -76,9 +76,6 @@ body {
   gap: 11px;
 }
 
-// 25px: 25px;
-// 1.75px: 1.75px;
-
 .value-input {
   display: inline-flex;
   align-items: center;
@@ -91,11 +88,11 @@ body {
 
   position: relative;
   display: inline-block;
-  width: 25px * 1.8;
-  height: 25px + (1.75px * 2);
+  width: 45px;
+  height: 28.5px;
   margin-right: 6vh;
   border: 1px solid black;
-  border-radius: 25px + (1.75px * 2);
+  border-radius: 28.5px;
 }
 
 .toggle {
@@ -120,10 +117,10 @@ body {
 .toggle__switch {
   position: relative;
   display: inline-block;
-  width: 25px * 1.8;
-  height: 25px + (1.75px * 2);
+  width: 45px;
+  height: 28.5px;
   margin-right: 6vh;
-  border-radius: 25px + (1.75px * 2);
+  border-radius: 28.5px;
   background: #dae6ec;
   transition: background 0.25s;
 }
