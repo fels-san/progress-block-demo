@@ -8,7 +8,6 @@ const progressContainer = document.querySelector("#progressBar");
 const progress = new Progress(progressContainer);
 
 progressValueInput.addEventListener("change", (event) => {
-  if (+event.target.value > 100 || +event.target.value < 0) return;
   progress.setProgress(event.target.value);
 });
 

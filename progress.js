@@ -87,6 +87,7 @@ export default class Progress {
   }
 
   setProgress(percent) {
+    if (percent > 100 || percent < 0 || !parseInt(percent)) return;
     const offset = this.circumference - (percent / 100) * this.circumference;
     this.progressCircle.style.strokeDashoffset = offset;
   }
