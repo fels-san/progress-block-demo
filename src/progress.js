@@ -17,7 +17,9 @@ export default class Progress {
       typeof animationSpeed !== "number" ||
       !parentNode
     ) {
-      throw new Error("Invalid constructor arguments");
+      throw new Error(
+        "Invalid constructor arguments. Use {parentNode: HTMLElement, options: {size?: number, strokeWidth?: number, bgColor?: string, progressColor?: string, animationSpeed?: number}}"
+      );
     }
 
     this.parentNode = parentNode;
