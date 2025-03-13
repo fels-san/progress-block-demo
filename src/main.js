@@ -1,4 +1,3 @@
-import "./src/style.css";
 import Progress from "./src/progress.js";
 
 const progressValueInput = document.querySelector("#progressValue");
