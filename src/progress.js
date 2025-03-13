@@ -29,6 +29,7 @@ export default class Progress {
     this.radius = this.size / 2 - this.strokeWidth;
     this.circumference = 2 * Math.PI * this.radius;
     this.animationSpeed = animationSpeed;
+    this.animationFrameId = null;
     this.colors = { bg: bgColor, progress: progressColor };
 
     this.init();
