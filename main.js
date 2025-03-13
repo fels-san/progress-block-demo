@@ -1,4 +1,4 @@
-import Progress from "./src/progress.js";
+import Progress from "./progress.js";
 
 const progressValueInput = document.querySelector("#progressValue");
 const animateToggleCheckbox = document.querySelector("#animateToggle");
