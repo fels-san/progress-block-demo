@@ -22,6 +22,38 @@ progressValueInput.addEventListener("input", (event) => {
   }
 });
 
+progressValueInput.addEventListener("keydown", (event) => {
+  const input = event.target;
+  let value = parseInt(input.value);
+
+  if (event.key === "ArrowUp") {
+    value = Math.min(value + 1, 100);
+  } else if (event.key === "ArrowDown") {
+    value = Math.max(value - 1, 0);
+  }
+
+  input.value = value;
+  previousValidValue = value;
+  progress.setProgress(value);
+});
+
+progressValueInput.addEventListener("wheel", (event) => {
+  const input = event.target;
+  let value = parseInt(input.value);
+
+  if (event.deltaY < 0) {
+    value = Math.min(value + 1, 100);
+  } else if (event.deltaY > 0) {
+    value = Math.max(value - 1, 0);
+  }
+
+  event.preventDefault();
+
+  input.value = value;
+  previousValidValue = value;
+  progress.setProgress(value);
+});
+
 animateToggleCheckbox.addEventListener("change", function () {
   if (this.checked) {
     progress.enableAnimation();
