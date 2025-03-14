@@ -16,13 +16,10 @@ progressValueInput.addEventListener("input", (event) => {
   if (value >= 0 && value <= 100 && !isNaN(value)) {
     input.value = value;
     previousValidValue = value;
+    progress.setProgress(value);
   } else {
     input.value = previousValidValue;
   }
-});
-
-progressValueInput.addEventListener("change", (event) => {
-  progress.setProgress(event.target.value);
 });
 
 animateToggleCheckbox.addEventListener("change", function () {
