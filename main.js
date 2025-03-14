@@ -30,6 +30,8 @@ progressValueInput.addEventListener("keydown", (event) => {
     value = Math.min(value + 1, 100);
   } else if (event.key === "ArrowDown") {
     value = Math.max(value - 1, 0);
+  } else {
+    return;
   }
 
   input.value = value;
