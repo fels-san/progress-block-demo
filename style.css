@@ -167,3 +167,8 @@ input[type="number"] {
 input:focus::placeholder {
   color: transparent;
 }
+
+input:focus {
+  border-color: black;
+  outline: none;
+}
