@@ -7,18 +7,21 @@ const hideToggleCheckbox = document.querySelector("#hideToggle");
 const progressContainer = document.querySelector("#progressBar");
 const progress = new Progress(progressContainer);
 
+let previousValidValue = "";
+
+progressValueInput.addEventListener("input", (event) => {
+  const input = event.target;
+  const value = input.value.replace(/[^0-9]/g, "");
+
+  if (value >= 0 && value <= 100 && !isNaN(value)) {
+    input.value = value;
+    previousValidValue = value;
+  } else {
+    input.value = previousValidValue;
+  }
+});
+
 progressValueInput.addEventListener("change", (event) => {
-  if (!event.target.oldValue) {
-    event.target.oldValue = event.target.defaultValue;
-  }
-
-  if (Number(event.target.value) < 0 || Number(event.target.value) > 100) {
-    event.target.value = event.target.oldValue;
-    return;
-  }
-
-  event.target.oldValue = event.target.value;
-
   progress.setProgress(event.target.value);
 });
 
