@@ -5,7 +5,7 @@
 
 ## Использованные технологии
 
-HTML, SASS, JavaScript.
+HTML, CSS, JavaScript.
 
 ## API
 
